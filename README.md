@@ -42,12 +42,14 @@ Parameter details:
 
 | parameter name | default | description  |
 | :-----  | :-----:  | :-----  |
-| <span style="white-space:nowrap">-i, --input_path </span>|  | The lr text image path. It can store full images or text layouts only. |
-| <span style="white-space:nowrap">-b, --bg_path</span> | None | The background sr path from other methods. If None, we only restore the text region detected by cnstd.|
-| <span style="white-space:nowrap">-o, --output_path</span> | None | The save path for text sr result. If None, we save the results on the same path with the format of [input_path]\_TIMESTAMP.|
-| <span style="white-space:nowrap">-a, --aligned </span>| False | action='store_true'. If True, the input text image contains only text region. If False, we use CnSTD to detect text regions and then restore them.|
-| <span style="white-space:nowrap">-s, --save_text </span>| False | action='store_true'. If True, save the LR and SR text layout.|
-| <span style="white-space:nowrap">-d, --device</span> | None | Device, use 'gpu' or 'cpu'. If None, we use torch.cuda.is_available to select the device. |
+| -i, --input_path |  | The lr text image path. It can store full images or text layouts only. |
+| -b, --bg_path | None | The background sr path from other methods. If None, we only restore the text region detected by cnstd.|
+| -o, --output_path | None | The save path for text sr result. If None, we save the results on the same path with the format of [input_path]\_TIMESTAMP.|
+| -a, --aligned | False | action='store_true'. If True, the input text image contains only text region. If False, we use CnSTD to detect text regions and then restore them.|
+| -s, --save_text | False | action='store_true'. If True, save the LR and SR text layout.|
+| -d, --device | None | Device, use 'gpu' or 'cpu'. If None, we use torch.cuda.is_available to select the device. |
+
+---
 
 ### Example for post-processing the text region
 ```
