@@ -1,5 +1,5 @@
 ## This is a simple text image super-resolution package.
-> It can post-process the text region with a simple commond, i.e., 
+It can post-process the text region with a simple commond, i.e., 
 ```
 textbsr -i [LR_TEXT_PATH] -b [BACKGROUND_SR_PATH]
 ```
