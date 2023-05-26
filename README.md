@@ -1,4 +1,8 @@
 ## This is a simple text image super-resolution package.
+> It can post-process the text region with a simple commond, i.e., 
+```
+textbsr -i [LR_TEXT_PATH] -b [BACKGROUND_SR_PATH]
+```
 ### Dependencies and Installation
 - numpy
 - opencv-python
@@ -30,7 +34,7 @@ Parameter details:
 | :-----  | :-----:  | :-----  |
 | <span style="white-space:nowrap">-i, --input_path </span>| - | The lr text image path. It can be a full image or a text region only |
 | <span style="white-space:nowrap">-b, --bg_path</span> | None | The background sr path from other methods. If None, we only super-resolve the text region.|
-| <span style="white-space:nowrap">-o, --output_path</span> | None | The save path for text sr result. If None, we save the results on the same path with [input_path]_TIMESTAMP|
+| <span style="white-space:nowrap">-o, --output_path</span> | None | The save path for text sr result. If None, we save the results on the same path with the format of [input_path]\_TIMESTAMP|
 | <span style="white-space:nowrap">-a, --aligned </span>| False | action='store_true'. If True, the input text image contains only text region. If False, we use CnSTD to detect and restore the text region.|
 | <span style="white-space:nowrap">-s, --save_text </span>| False | action='store_true'. If True, save the LR and SR text layout.|
 | <span style="white-space:nowrap">-d, --device</span> | None | Device, use 'gpu' or 'cpu'. If None, we use torch.cuda.is_available to select the device. |
