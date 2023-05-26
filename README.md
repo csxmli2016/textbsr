@@ -1,4 +1,8 @@
-## This is a simple text image super-resolution package.
+# This is a simple text image super-resolution package.
+[![PyPI](https://img.shields.io/pypi/v/textbsr)](https://pypi.org/project/textbsr/)
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=csxmli2016/textbsr) 
+[![Citation](https://img.shields.io/badge/Citation-bibtex-green)](https://github.com/csxmli2016/textbsr/blob/main/README.md#bookmark_tabs-citation)
+
 This package can post-process the text region with a simple command, i.e., 
 ```
 textbsr -i [LR_TEXT_PATH] -b [BACKGROUND_SR_PATH]
@@ -88,8 +92,8 @@ textbsr.bsr(input_path='./testsets/LQs', aligned=True)
 | :-----:  | :-----:  |
 | <img src="./GitImgs/Ours/test5_patch_5i.png" width="250px"> | <img src="./GitImgs/Ours/test5_patch_5o.png" width="250px"> |
 
-
-> If you find this package helpful, please kindly consider citing our paper:
+## :bookmark_tabs: Citation
+If you find this package helpful, please kindly consider citing our paper:
 ```
 @InProceedings{li2023marconet,
 author = {Li, Xiaoming and Zuo, Wangmeng and Loy, Chen Change},
@@ -98,3 +102,9 @@ booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Patte
 year = {2023}
 }
 ```
+
+## :scroll: License
+
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
