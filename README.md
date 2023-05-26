@@ -3,9 +3,14 @@ This package can post-process the text region with a simple commond, i.e.,
 ```
 textbsr -i [LR_TEXT_PATH] -b [BACKGROUND_SR_PATH]
 ```
-> If the text image is degraded severely, this method may fail to obtain a plausible result.
+
+> - [LR_TEXT_PATH] is the LR image path.
+> - [BACKGROUND_SR_PATH] stores the results from any blind image super-resolution methods.
+> - If the text image is degraded severely, this method may still fail to obtain a plausible result.
+
 ### Dependencies and Installation
 - numpy
+- cnstd
 - opencv-python
 - torch>=1.8.1
 - torchvision>=0.9
