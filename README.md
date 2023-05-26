@@ -1,8 +1,4 @@
 ## This is a simple text image super-resolution package.
-
----
-
-## Quick Start
 ### Dependencies and Installation
 - numpy
 - opencv-python
@@ -40,7 +36,44 @@ Parameter details:
 | <span style="white-space:nowrap">-d, --device</span> | None | Device, use 'gpu' or 'cpu'. If None, we use torch.cuda.is_available to select the device. |
 | <span style="white-space:nowrap">-t, --box_score_thresh </span>  |0.35|threshold for CnSTD detecting the text region.|
 
-### Example
+### Example for post-processing the text region
+```
+# On the terminal command
+textbsr -i [LR_TEXT_PATH] -b [BACKGROUND_SR_PATH] -s
+```
+or
+```
+# On the python environment
+from textbsr import textbsr
+textbsr.bsr(input_path='./testsets/LQs', bg_path='./testsets/RealESRGANResults', save_text=True)
+```
+> When [BACKGROUND_SR_PATH] is None, we only restore the text region and paste back to the LR input, with the background region unchanged.
+
+| Real-world LR Text Image | Real-ESRGAN | Post-process using our textbsr | 
+| :-----:  | :-----:  | :-----:  |
+|<img src="./GitImgs/LR/test1.jpg" width="250px"> | <img src="./GitImgs/RealESRGAN/test1.jpg" width="250px">|<img src="./GitImgs/Ours/test1_BSRGANText.png" width="250px"> |
+|<img src="./GitImgs/LR/test2.jpg" width="250px"> | <img src="./GitImgs/RealESRGAN/test2.jpg" width="250px">|<img src="./GitImgs/Ours/test2_BSRGANText.png" width="250px"> |
+|<img src="./GitImgs/LR/test2_patch_0i.png" width="250px"> | <img src="./GitImgs/RealESRGAN/test2_patch001.jpg" width="250px">|<img src="./GitImgs/Ours/test2_patch_0o.png" width="250px"> |
+|<img src="./GitImgs/LR/test42.png" width="250px"> | <img src="./GitImgs/RealESRGAN/test42.png" width="250px">|<img src="./GitImgs/Ours/test4_BSRGANText2.png" width="250px"> |
+
+---
+
+### Example for super-resolving the aligned text region
+```
+# On the terminal command
+textbsr -i [LR_TEXT_PATH] -a
+```
+or
+```
+# On the python environment
+from textbsr import textbsr
+textbsr.bsr(input_path='./testsets/LQs', aligned=True)
+```
+
+
+| Aligned LR Text Image | Our result |
+| :-----:  | :-----:  |
+| <img src="./GitImgs/Ours/test5_patch_5i.png" width="250px"> | <img src="./GitImgs/Ours/test5_patch_5o.png" width="250px"> |
 
 
 > If you find this package helpful, please kindly consider to cite our paper:
