@@ -13,8 +13,8 @@ textbsr -i [LR_TEXT_PATH] -b [BACKGROUND_SR_PATH]
 > - If the text image is degraded severely, this method may still fail to obtain a plausible result.
 
 ### Dependencies and Installation
-- numpy
 - cnstd
+- numpy
 - opencv-python
 - torch>=1.8.1
 - torchvision>=0.9
@@ -98,7 +98,7 @@ textbsr.bsr(input_path='./testsets/LQs', aligned=True)
 
 
 ## Acknowledgement
-This project is built based on [BSRGAN](https://github.com/cszn/BSRGAN) and [cnstd](https://github.com/breezedeus/CnSTD).
+This project is built based on [BSRGAN](https://github.com/cszn/BSRGAN). We use [cnstd](https://github.com/breezedeus/CnSTD) for Chinese and English text detection.
 
 ## :bookmark_tabs: Citation
 If you find this package helpful, please kindly consider citing our paper:
