@@ -61,10 +61,13 @@ textbsr.bsr(input_path='./testsets/LQs', bg_path='./testsets/RealESRGANResults',
 | Real-world LR Text Image | Real-ESRGAN | Post-process using our textbsr | 
 | :-----:  | :-----:  | :-----:  |
 |<img src="./GitImgs/LR/test1.jpg" width="250px"> | <img src="./GitImgs/RealESRGAN/test1.jpg" width="250px">|<img src="./GitImgs/Ours/test1_BSRGANText.png" width="250px"> |
+<!--|<img src="./GitImgs/Ours/test1_patch_0i.png" width="250px"> | <img src="./GitImgs/RealESRGAN/test1_crop0.jpg" width="250px">|<img src="./GitImgs/Ours/test1_patch_0o.png" width="250px"> |
 |<img src="./GitImgs/LR/test2.jpg" width="250px"> | <img src="./GitImgs/RealESRGAN/test2.jpg" width="250px">|<img src="./GitImgs/Ours/test2_BSRGANText.png" width="250px"> |
 |<img src="./GitImgs/LR/test2_patch_0i.png" width="250px"> | <img src="./GitImgs/RealESRGAN/test2_patch001.jpg" width="250px">|<img src="./GitImgs/Ours/test2_patch_0o.png" width="250px"> |
+-->
 |<img src="./GitImgs/LR/test42.png" width="250px"> | <img src="./GitImgs/RealESRGAN/test42.png" width="250px">|<img src="./GitImgs/Ours/test4_BSRGANText2.png" width="250px"> |
-
+|<img src="./GitImgs/LR/00426.png" width="250px"> | <img src="./GitImgs/RealESRGAN/00426_out.png" width="250px">|<img src="./GitImgs/Ours/00426_BSRGANText.png" width="250px"> |
+|<img src="./GitImgs/LR/00426_patch_0i.png" width="250px"> | <img src="./GitImgs/RealESRGAN/00426_out_crop0.png" width="250px">|<img src="./GitImgs/Ours/00426_patch_0o.png" width="250px"> |
 ---
 
 ### Example for super-resolving the aligned text region
