@@ -13,11 +13,11 @@ textbsr -i [LR_TEXT_PATH] -b [BACKGROUND_SR_PATH]
 > - If the text image is degraded severely, this method may still fail to obtain a plausible result.
 
 ### Dependencies and Installation
-- cnstd
 - numpy
 - opencv-python
 - torch>=1.8.1
 - torchvision>=0.9
+- cnstd
 
 ``` 
 # Install with pip
