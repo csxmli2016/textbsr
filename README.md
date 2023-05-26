@@ -54,7 +54,6 @@ Parameter details:
 # On the terminal command
 textbsr -i [LR_TEXT_PATH] -b [BACKGROUND_SR_PATH] -s
 ```
-<img src="./GitImgs/cmd2_2.png" width="800px">
 
 or
 ```
@@ -64,7 +63,6 @@ textbsr.bsr(input_path='./testsets/LQs', bg_path='./testsets/RealESRGANResults',
 ```
 > When [BACKGROUND_SR_PATH] is None, we only restore the text region and paste it back to the LR input, with the background region unchanged.
 
-<img src="./GitImgs/cmd1_2.png" width="800px">
 
 
 
