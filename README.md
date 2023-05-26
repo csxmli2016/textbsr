@@ -3,6 +3,7 @@ It can post-process the text region with a simple commond, i.e.,
 ```
 textbsr -i [LR_TEXT_PATH] -b [BACKGROUND_SR_PATH]
 ```
+> If the text image is degraded severely, this method may fail to obtain a plausible result.
 ### Dependencies and Installation
 - numpy
 - opencv-python
@@ -38,7 +39,6 @@ Parameter details:
 | <span style="white-space:nowrap">-a, --aligned </span>| False | action='store_true'. If True, the input text image contains only text region. If False, we use CnSTD to detect and restore the text region.|
 | <span style="white-space:nowrap">-s, --save_text </span>| False | action='store_true'. If True, save the LR and SR text layout.|
 | <span style="white-space:nowrap">-d, --device</span> | None | Device, use 'gpu' or 'cpu'. If None, we use torch.cuda.is_available to select the device. |
-| <span style="white-space:nowrap">-t, --box_score_thresh </span>  |0.35|threshold for CnSTD detecting the text region.|
 
 ### Example for post-processing the text region
 ```
