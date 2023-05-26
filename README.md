@@ -96,6 +96,10 @@ textbsr.bsr(input_path='./testsets/LQs', aligned=True)
 | :-----:  | :-----:  |
 | <img src="./GitImgs/Ours/test5_patch_5i.png" width="250px"> | <img src="./GitImgs/Ours/test5_patch_5o.png" width="250px"> |
 
+
+## Acknowledgement
+This project is built based on [BSRGAN](https://github.com/cszn/BSRGAN) and [cnstd](https://github.com/breezedeus/CnSTD).
+
 ## :bookmark_tabs: Citation
 If you find this package helpful, please kindly consider citing our paper:
 ```
