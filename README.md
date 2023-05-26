@@ -38,7 +38,7 @@ Parameter details:
 
 | parameter name | default | description  |
 | :-----  | :-----:  | :-----  |
-| <span style="white-space:nowrap">-i, --input_path </span>| - | The lr text image path. It can store full images or text layouts only. |
+| <span style="white-space:nowrap">-i, --input_path </span>|  | The lr text image path. It can store full images or text layouts only. |
 | <span style="white-space:nowrap">-b, --bg_path</span> | None | The background sr path from other methods. If None, we only restore the text region detected by cnstd.|
 | <span style="white-space:nowrap">-o, --output_path</span> | None | The save path for text sr result. If None, we save the results on the same path with the format of [input_path]\_TIMESTAMP.|
 | <span style="white-space:nowrap">-a, --aligned </span>| False | action='store_true'. If True, the input text image contains only text region. If False, we use CnSTD to detect text regions and then restore them.|
