@@ -55,15 +55,18 @@ Parameter details:
 textbsr -i [LR_TEXT_PATH] -b [BACKGROUND_SR_PATH] -s
 ```
 <img src="./GitImgs/cmd2_2.png" width="800px">
+
 or
 ```
 # On the python environment
 from textbsr import textbsr
 textbsr.bsr(input_path='./testsets/LQs', bg_path='./testsets/RealESRGANResults', save_text=True)
 ```
+> When [BACKGROUND_SR_PATH] is None, we only restore the text region and paste it back to the LR input, with the background region unchanged.
+
 <img src="./GitImgs/cmd1_2.png" width="800px">
 
-> When [BACKGROUND_SR_PATH] is None, we only restore the text region and paste it back to the LR input, with the background region unchanged.
+
 
 | Real-world LR Text Image | Real-ESRGAN | Post-process using our textbsr | 
 | :-----:  | :-----:  | :-----:  |
