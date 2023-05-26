@@ -63,7 +63,12 @@ textbsr.bsr(input_path='./testsets/LQs', bg_path='./testsets/RealESRGANResults',
 |<img src="./GitImgs/LR/test1.jpg" width="250px"> | <img src="./GitImgs/RealESRGAN/test1.jpg" width="250px">|<img src="./GitImgs/Ours/test1_BSRGANText.png" width="250px"> |
 |<img src="./GitImgs/LR/test42.png" width="250px"> | <img src="./GitImgs/RealESRGAN/test42.png" width="250px">|<img src="./GitImgs/Ours/test4_BSRGANText2.png" width="250px"> |
 |<img src="./GitImgs/LR/00426.png" width="250px"> | <img src="./GitImgs/RealESRGAN/00426_out.png" width="250px">|<img src="./GitImgs/Ours/00426_BSRGANText.png" width="250px"> |
-|<img src="./GitImgs/LR/00426_patch_0i.png" width="250px"> | <img src="./GitImgs/RealESRGAN/00426_out_crop0.png" width="250px">|<img src="./GitImgs/Ours/00426_patch_0o.png" width="250px"> |
+
+From top to bottom: text regions from LR input, RealESRGAN, and post-process using Ours:
+<img src="./GitImgs/LR/00426_patch_0i.png" width="750px"> 
+<img src="./GitImgs/RealESRGAN/00426_out_crop0.png" width="750px">
+<img src="./GitImgs/Ours/00426_patch_0o.png" width="750px">
+
 ---
 
 ### Example for super-resolving the aligned text region
