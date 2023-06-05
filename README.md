@@ -1,7 +1,11 @@
 # This is a simple text image super-resolution package.
 [![PyPI](https://img.shields.io/pypi/v/textbsr)](https://pypi.org/project/textbsr/)
-![visitors](https://visitor-badge.laobi.icu/badge?page_id=csxmli2016/textbsr) 
+[](https://visitor-badge.laobi.icu/badge?page_id=csxmli2016/textbsr) 
 [![Citation](https://img.shields.io/badge/Citation-bibtex-green)](https://github.com/csxmli2016/textbsr/blob/main/README.md#bookmark_tabs-citation)
+
+
+[<img src="GitImgs/Compare/r8.png" width="790px"/>](https://imgsli.com/MTg0MDI4)
+[<img src="GitImgs/Compare/r6.png" width="790px"/>](https://imgsli.com/MTg0MDMw)
 
 This package can post-process the text region with a simple command, i.e., 
 ```
@@ -14,7 +18,6 @@ textbsr -i [LR_TEXT_PATH] -b [BACKGROUND_SR_PATH]
 
 ### Dependencies and Installation
 - numpy
-- opencv-python
 - torch>=1.8.1
 - torchvision>=0.9
 - cnstd
@@ -42,46 +45,65 @@ Parameter details:
 
 | parameter name | default | description  |
 | :-----  | :-----:  | :-----  |
-| -i, --input_path |  | The lr text image path. It can store full images or text layouts only. |
-| -b, --bg_path | None | The background sr path from other methods. If None, we only restore the text region detected by cnstd.|
+| -i, --input_path |  | The LR text image path. It can be full images or text layouts only. |
+| -b, --bg_path | None | The background SR path from any BSR methods (e.g., [BSRGAN](https://github.com/cszn/BSRGAN), [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN), [StableSR](https://github.com/IceClear/StableSR)). If None, we only restore the text region detected by [cnstd](https://github.com/breezedeus/CnSTD).|
 | -o, --output_path | None | The save path for text sr result. If None, we save the results on the same path with the format of [input_path]\_TIMESTAMP.|
-| -a, --aligned | False | action='store_true'. If True, the input text image contains only text region. If False, we use CnSTD to detect text regions and then restore them.|
+| -a, --aligned | False | action='store_true'. If True, the input text image contains only text region. If False, we use [cnstd](https://github.com/breezedeus/CnSTD) to detect text regions and then restore them.|
 | -s, --save_text | False | action='store_true'. If True, save the LR and SR text layout.|
 | -d, --device | None | Device, use 'gpu' or 'cpu'. If None, we use torch.cuda.is_available to select the device. |
 
 ---
 
-### Example for post-processing the text region
+## (1) Text Region Restoration
 ```
 # On the terminal command
-textbsr -i [LR_TEXT_PATH] -b [BACKGROUND_SR_PATH] -s
+textbsr -i [LR_TEXT_PATH]
+```
+or
+```
+# On the python environment
+from textbsr import textbsr
+textbsr.bsr(input_path='./testsets/LQs', save_text=True)
+```
+> It supports English and Chinese. Text regions can have different angles.
+
+[<img src="GitImgs/Compare/r9.png" height="395px"/>](https://imgsli.com/MTg0MDU1)
+[<img src="GitImgs/Compare/r2.png" height="395px"/>](https://imgsli.com/MTg0MDIy)
+[<img src="GitImgs/Compare/r3_3.png" height="318px"/>](https://imgsli.com/MTg0MDIz)
+[<img src="GitImgs/Compare/r4_2.png" height="318px"/>](https://imgsli.com/MTg0MDQ4)
+
+
+## (2) Post-process the Text Region from Any Blind Image Super-resolution (BSR) Methods
+
+<img src="./GitImgs/Compare/postprocess_2.png" width="785px">
+
+```
+# On the terminal command
+textbsr -i [LR_TEXT_PATH] -b [AnyBSR_Results_PATH] -s
 ```
 
 or
 ```
 # On the python environment
 from textbsr import textbsr
-textbsr.bsr(input_path='./testsets/LQs', bg_path='./testsets/RealESRGANResults', save_text=True)
+textbsr.bsr(input_path='./testsets/LQs', bg_path='./testsets/AnyBSRResults', save_text=True)
 ```
-> When [BACKGROUND_SR_PATH] is None, we only restore the text region and paste it back to the LR input, with the background region unchanged.
+> When [AnyBSR_Results_PATH] is None, we only restore the text region and paste it back to the LR input, with the background region unchanged.
 
 
 
 
-| Real-world LR Text Image | Real-ESRGAN | Post-process using our textbsr | 
+| Real-world LR Text Image | AnyBSR Method | Post-process using our textbsr | 
 | :-----:  | :-----:  | :-----:  |
-|<img src="./GitImgs/LR/test1.jpg" width="250px"> | <img src="./GitImgs/RealESRGAN/test1.jpg" width="250px">|<img src="./GitImgs/Ours/test1_BSRGANText.png" width="250px"> |
+|<img src="./GitImgs/LR/test1.jpg" width="250px"> | <img src="./GitImgs/RealESRGAN/test1.jpg" width="250px">|<img src="./GitImgs/Compare/new.png" width="250px"> |
 |<img src="./GitImgs/LR/test42.png" width="250px"> | <img src="./GitImgs/RealESRGAN/test42.png" width="250px">|<img src="./GitImgs/Ours/test4_BSRGANText2.png" width="250px"> |
 |<img src="./GitImgs/LR/00426.png" width="250px"> | <img src="./GitImgs/RealESRGAN/00426_out.png" width="250px">|<img src="./GitImgs/Ours/00426_BSRGANText.png" width="250px"> |
 
-From top to bottom: text regions from LR input, RealESRGAN, and post-process using Ours:
-<img src="./GitImgs/LR/00426_patch_0i.png" width="750px"> 
-<img src="./GitImgs/RealESRGAN/00426_out_crop0.png" width="750px">
-<img src="./GitImgs/Ours/00426_patch_0o.png" width="750px">
+[<img src="GitImgs/Compare/r7.png" width="790px"/>](https://imgsli.com/MTg0MDMz)
 
 ---
 
-### Example for restoring the aligned text region
+## (3) Example for restoring the aligned text region
 ```
 # On the terminal command
 textbsr -i [LR_TEXT_PATH] -a
@@ -94,9 +116,10 @@ textbsr.bsr(input_path='./testsets/LQs', aligned=True)
 ```
 
 
-| Aligned LR Text Image | Our result |
+| Aligned LR Text Image | TextBSR |
 | :-----:  | :-----:  |
-| <img src="./GitImgs/Ours/test5_patch_5i.png" width="250px"> | <img src="./GitImgs/Ours/test5_patch_5o.png" width="250px"> |
+| <img src="./GitImgs/Ours/test5_patch_5i.png" width="395px"> | <img src="./GitImgs/Ours/test5_patch_5o.png" width="395px"> |
+| <img src="./GitImgs/Compare/en12_patch_4_LR.png" width="395px"> | <img src="./GitImgs/Compare/en12_patch_4_SR.png" width="395px"> |
 
 
 ## Acknowledgement
