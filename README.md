@@ -20,7 +20,7 @@ textbsr -i [LR_TEXT_PATH] -b [BACKGROUND_SR_PATH]
 - numpy
 - torch>=1.8.1
 - torchvision>=0.9
-- cnstd
+- cnstd==1.2
 
 ``` 
 # Install with pip
@@ -65,7 +65,6 @@ or
 from textbsr import textbsr
 textbsr.bsr(input_path='./testsets/LQs', save_text=True)
 ```
-> It supports English and Chinese. Text regions can have different angles.
 
 [<img src="GitImgs/Compare/r9.png" height="395px"/>](https://imgsli.com/MTg0MDU1)
 [<img src="GitImgs/Compare/r2.png" height="395px"/>](https://imgsli.com/MTg0MDIy)
