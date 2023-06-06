@@ -1,11 +1,10 @@
 # This is a simple text image super-resolution package.
 [![PyPI](https://img.shields.io/pypi/v/textbsr)](https://pypi.org/project/textbsr/)
-[](https://visitor-badge.laobi.icu/badge?page_id=csxmli2016/textbsr) 
 [![Citation](https://img.shields.io/badge/Citation-bibtex-green)](https://github.com/csxmli2016/textbsr/blob/main/README.md#bookmark_tabs-citation)
 
 
 [<img src="GitImgs/Compare/r8.png" width="790px"/>](https://imgsli.com/MTg0MDI4)
-[<img src="GitImgs/Compare/r6.png" width="790px"/>](https://imgsli.com/MTg0MDMw)
+[<img src="GitImgs/Compare/r6.png" width="790px"/>](https://imgsli.com/MTg0MTg1)
 
 This package can post-process the text region with a simple command, i.e., 
 ```
@@ -48,7 +47,7 @@ Parameter details:
 | -i, --input_path |  | The LR text image path. It can be full images or text layouts only. |
 | -b, --bg_path | None | The background SR path from any BSR methods (e.g., [BSRGAN](https://github.com/cszn/BSRGAN), [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN), [StableSR](https://github.com/IceClear/StableSR)). If None, we only restore the text region detected by [cnstd](https://github.com/breezedeus/CnSTD).|
 | -o, --output_path | None | The save path for text sr result. If None, we save the results on the same path with the format of [input_path]\_TIMESTAMP.|
-| -a, --aligned | False | action='store_true'. If True, the input text image contains only text region. If False, we use [cnstd](https://github.com/breezedeus/CnSTD) to detect text regions and then restore them.|
+| -a, --aligned | False | action='store_true'. If True, the input text image contains only **one-line** text region. If False, we use [cnstd](https://github.com/breezedeus/CnSTD) to detect text regions and then restore them.|
 | -s, --save_text | False | action='store_true'. If True, save the LR and SR text layout.|
 | -d, --device | None | Device, use 'gpu' or 'cpu'. If None, we use torch.cuda.is_available to select the device. |
 
