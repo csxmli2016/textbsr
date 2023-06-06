@@ -98,6 +98,7 @@ textbsr.bsr(input_path='./testsets/LQs', bg_path='./testsets/AnyBSRResults', sav
 |<img src="./GitImgs/LR/00426.png" width="250px"> | <img src="./GitImgs/RealESRGAN/00426_out.png" width="250px">|<img src="./GitImgs/Ours/00426_BSRGANText.png" width="250px"> |
 
 [<img src="GitImgs/Compare/r7.png" width="790px"/>](https://imgsli.com/MTg0MDMz)
+[<img src="GitImgs/Compare/r10.png" width="790px"/>](https://imgsli.com/MTg0MTg1)
 
 ---
 
