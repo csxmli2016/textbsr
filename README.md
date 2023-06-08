@@ -1,6 +1,7 @@
 # This is a simple text image super-resolution package.
 [![PyPI](https://img.shields.io/pypi/v/textbsr)](https://pypi.org/project/textbsr/)
 [![Citation](https://img.shields.io/badge/Citation-bibtex-green)](https://github.com/csxmli2016/textbsr/blob/main/README.md#bookmark_tabs-citation)
+> This is a simple baseline (ESRGAN) trained using synthetic data from our CVPR paper [MARCONet](https://github.com/csxmli2016/MARCONet). This model is trained on Chinese and English Characters. When the degradation is not severe, it may also perform well in other languages, like Japanese.
 
 
 [<img src="GitImgs/Compare/r8.png" width="790px"/>](https://imgsli.com/MTg0MDI4)
@@ -69,6 +70,7 @@ textbsr.bsr(input_path='./testsets/LQs', save_text=True)
 [<img src="GitImgs/Compare/r2.png" height="395px"/>](https://imgsli.com/MTg0MDIy)
 [<img src="GitImgs/Compare/r3_3.png" height="318px"/>](https://imgsli.com/MTg0MDIz)
 [<img src="GitImgs/Compare/r4_2.png" height="318px"/>](https://imgsli.com/MTg0MDQ4)
+[<img src="GitImgs/Compare/r11.png" width="790px"/>](https://imgsli.com/MTg0NjU0)
 
 
 ## (2) Post-process the Text Region from Any Blind Image Super-resolution (BSR) Methods
@@ -125,7 +127,7 @@ textbsr.bsr(input_path='./testsets/LQs', aligned=True)
 This project is built based on [BSRGAN](https://github.com/cszn/BSRGAN). We use [cnstd](https://github.com/breezedeus/CnSTD) for Chinese and English text detection.
 
 ## :bookmark_tabs: Citation
-If you find this package helpful, please kindly consider citing our paper:
+If you find this package helpful, please kindly consider citing our CVPR23 paper [MARCONet](https://github.com/csxmli2016/MARCONet):
 ```
 @InProceedings{li2023marconet,
 author = {Li, Xiaoming and Zuo, Wangmeng and Loy, Chen Change},
