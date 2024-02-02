@@ -44,7 +44,7 @@ class TextRestoration(object):
 
         if not is_aligned:
             for i, box_info in enumerate(box_infos['detected_texts']):
-                box = box_info['box'].astype(np.int)# left top, right top, right bottom, left bottom, [width, height]
+                box = box_info['box'].astype(int)# left top, right top, right bottom, left bottom, [width, height]
                 std_cropped = box_info['cropped_img']
 
                 h, w = std_cropped.shape[:2]
@@ -96,7 +96,7 @@ class TextRestoration(object):
                 orig_texts.append(in_img)
                 enhanced_texts.append(SQ)
 
-                tmp_mask = np.ones(SQ.shape).astype(np.float)*255
+                tmp_mask = np.ones(SQ.shape).astype(float)*255
 
                 warp_mask = cv2.warpPerspective(tmp_mask, inv_matrix, (bg_width, bg_height), flags=3)
                 warp_img = cv2.warpPerspective(SQ, inv_matrix, (bg_width, bg_height), flags=3)
